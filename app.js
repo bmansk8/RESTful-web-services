@@ -6,10 +6,10 @@ const app = express();
 
 if (process.env.ENV === 'Test') {
   console.log('This is the test database');
-  const db = mongoose.connect('mongodb://localhost/bookAPI_Test');
+  const db = mongoose.connect('mongodb://localhost/bookAPI_Test', { useNewUrlParser: true, useUnifiedTopology: true });
 } else {
   console.log('This is the real database');
-  const db = mongoose.connect('mongodb://localhost/bookAPI-prod');
+  const db = mongoose.connect('mongodb://localhost/bookAPI', { useNewUrlParser: true, useUnifiedTopology: true });
 }
 
 
